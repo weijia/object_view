@@ -1,0 +1,35 @@
+{% extends "ui_framework/index.html" %}
+{% load i18n %}
+{% block extra_head %}
+<link href="/static/elements.css" type="text/css" rel="stylesheet" />
+<link href="/static/object_filter/object_table.css" type="text/css" rel="stylesheet" />
+<link href="/static/dataTables/css/jquery.dataTables.css" type="text/css" rel="stylesheet" />
+<SCRIPT type="text/javascript" src="/static/string_tools.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="/static/dataTables/js/jquery.dataTables.min.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="/static/object_filter/object_table.js"></SCRIPT>
+{% endblock %}
+{% block body_content %}
+<div id="table_data_src_url" class="invisible_data_item">{{ item_list_url }}</div>
+<div id="table_actions" class="invisible_data_item">{{ item_actions|safe }}</div>
+<div id="main-container">
+    <table id="object-table">
+        <thead>
+            <tr>
+                <th>{% trans 'ufs_url' %}</th>
+                <th>{% trans 'full_path' %}</th>
+                <th>{% trans 'description' %}</th>
+                <th>{% trans 'operations' %}</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr>
+                <th>{% trans 'ufs_url' %}</th>
+                <th>{% trans 'full_path' %}</th>
+                <th>{% trans 'description' %}</th>
+                <th>{% trans 'operations' %}</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock %}
